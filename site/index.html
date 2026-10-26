@@ -3,121 +3,184 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Simply Cast — живой эфир с одного компьютера</title>
-<meta name="description" content="Бесплатный видеомикшер для Windows: камеры, экраны, NDI и веб-графика в Program, в запись и в стрим одновременно. Без ключей и активации.">
+<title>Simply Cast — видеомикшер для Windows</title>
+<meta name="description" content="Бесплатный видеомикшер для Windows: камеры, экраны, NDI и веб-графика в эфир, запись и стрим одновременно. Без ключей и активации. Пульт для Android в комплекте.">
 <style>
-  /* colours: replica/design/tokens.json (checked with contrast.py, 0 AA failures) */
-  :root { --bg:#15171a; --surface:#23262b; --border:#3a3e45; --text:#e4e6ea; --muted:#a3a9b2;
-          --accent:#a493ff; --accent-strong:#6c4fe0; --on-accent:#ffffff; }
-  * { box-sizing: border-box; }
-  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.55 "Segoe UI", system-ui, sans-serif; }
-  .wrap { max-width:1080px; margin:0 auto; padding:0 16px; }
-  header.top { display:flex; align-items:center; justify-content:space-between; padding:20px 0; }
-  .logo { font-weight:700; font-size:20px; letter-spacing:.2px; }
-  .logo span { display:inline-block; width:10px; height:22px; margin-right:8px; vertical-align:-4px;
-               background:var(--accent-strong); clip-path:polygon(0 0,100% 0,50% 100%); }
-  h1 { font-size:clamp(30px,5vw,48px); line-height:1.12; margin:48px 0 16px; }
-  .lead { font-size:clamp(17px,2.2vw,20px); color:var(--muted); max-width:720px; margin:0 0 28px; }
-  .btn { display:inline-block; background:var(--accent-strong); color:var(--on-accent); text-decoration:none;
-         font-weight:600; padding:14px 22px; border-radius:10px; }
+  :root {
+    --bg:#0a0d16; --panel:#121726; --panel2:#171d30; --line:#262e47;
+    --text:#eef1f8; --muted:#9aa4bf; --accent:#8b7bff; --accent2:#6c4fe0;
+    --live:#ff4d5e; --prev:#ffb020; --ok:#34d399;
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.6 "Segoe UI",system-ui,sans-serif;
+         background-image:radial-gradient(900px 420px at 50% -120px, rgba(108,79,224,.28), transparent 70%); }
+  a { color:inherit; }
+  .wrap { max-width:1160px; margin:0 auto; padding:0 20px; }
+
+  nav { display:flex; align-items:center; justify-content:space-between; padding:18px 0; }
+  .logo { display:flex; align-items:center; gap:10px; font-weight:700; font-size:19px; text-decoration:none; }
+  .logo i { width:30px; height:30px; border-radius:50%; background:linear-gradient(135deg,var(--accent),var(--accent2));
+            display:grid; place-items:center; }
+  .logo i::after { content:""; border-left:9px solid #fff; border-top:6px solid transparent; border-bottom:6px solid transparent; margin-left:3px; }
+  nav .links { display:flex; gap:22px; align-items:center; font-size:15px; color:var(--muted); }
+  nav .links a { text-decoration:none; }
+  nav .links a:hover { color:var(--text); }
+
+  .btn { display:inline-flex; align-items:center; gap:10px; padding:14px 24px; border-radius:12px; font-weight:600;
+         text-decoration:none; border:1px solid var(--line); background:var(--panel2); transition:.15s; }
+  .btn:hover { border-color:var(--accent); }
+  .btn.primary { background:linear-gradient(135deg,var(--accent),var(--accent2)); border-color:transparent; color:#fff;
+                 box-shadow:0 8px 30px rgba(108,79,224,.4); }
+  .btn.primary:hover { filter:brightness(1.1); }
   .btn:focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
-  .note { color:var(--muted); font-size:14px; margin-top:10px; }
-  .shot { margin:36px 0 8px; border:1px solid var(--border); border-radius:12px; overflow:hidden; }
-  .shot img { display:block; width:100%; height:auto; }
-  section { padding:44px 0; border-top:1px solid var(--border); }
-  h2 { font-size:clamp(24px,3vw,30px); margin:0 0 20px; }
-  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:16px; }
-  .card { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:18px; }
-  .card h3 { margin:0 0 6px; font-size:17px; }
-  .card p, li { color:var(--muted); margin:0; }
-  ol, ul { padding-left:20px; margin:0; } li { margin:6px 0; }
-  .num { color:var(--accent); font-weight:700; }
-  table { border-collapse:collapse; width:100%; max-width:560px; }
-  td, th { text-align:left; padding:10px 12px; border-bottom:1px solid var(--border); }
-  th { color:var(--muted); font-weight:600; }
-  dt { font-weight:600; margin-top:16px; } dd { margin:4px 0 0; color:var(--muted); }
-  a { color:var(--accent); }
-  footer { padding:32px 0 48px; color:var(--muted); font-size:14px; border-top:1px solid var(--border); }
+
+  .hero { text-align:center; padding:56px 0 32px; }
+  .badges { display:flex; gap:8px; justify-content:center; margin-bottom:20px; }
+  .pill { font-size:12px; font-weight:700; letter-spacing:.8px; padding:5px 11px; border-radius:99px; border:1px solid; }
+  .pill.live { color:var(--live); border-color:rgba(255,77,94,.5); background:rgba(255,77,94,.1); }
+  .pill.prev { color:var(--prev); border-color:rgba(255,176,32,.5); background:rgba(255,176,32,.1); }
+  h1 { font-size:clamp(34px,6vw,64px); line-height:1.07; margin:0 0 18px; letter-spacing:-.02em; }
+  h1 em { font-style:normal; background:linear-gradient(90deg,var(--accent),#c9c0ff); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .lead { color:var(--muted); font-size:clamp(17px,2.2vw,21px); max-width:700px; margin:0 auto 30px; }
+  .cta { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; }
+  .meta { color:var(--muted); font-size:14px; margin-top:14px; }
+
+  .shot { margin:44px auto 0; border-radius:16px; padding:8px; background:var(--panel); border:1px solid var(--line);
+          box-shadow:0 40px 90px rgba(0,0,0,.6), 0 0 120px rgba(108,79,224,.18); }
+  .shot img { display:block; width:100%; height:auto; border-radius:10px; }
+
+  section { padding:84px 0 0; }
+  h2 { font-size:clamp(26px,4vw,38px); letter-spacing:-.01em; margin:0 0 10px; }
+  .sub { color:var(--muted); max-width:620px; margin:0 0 34px; }
+
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px; }
+  .f { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:22px; }
+  .f b { display:block; font-size:17px; margin-bottom:6px; }
+  .f p { margin:0; color:var(--muted); font-size:15px; }
+  .f .ic { width:38px; height:38px; border-radius:10px; background:rgba(139,123,255,.14); color:var(--accent);
+           display:grid; place-items:center; font-size:19px; margin-bottom:14px; }
+
+  .steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px; counter-reset:s; }
+  .step { position:relative; background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:22px 22px 22px 70px; }
+  .step::before { counter-increment:s; content:counter(s); position:absolute; left:20px; top:20px; width:34px; height:34px; border-radius:50%;
+                  background:var(--accent2); display:grid; place-items:center; font-weight:700; }
+  .step b { display:block; margin-bottom:4px; }
+  .step p { margin:0; color:var(--muted); font-size:15px; }
+
+  .dl { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:14px; }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:26px; display:flex; flex-direction:column; gap:14px; }
+  .card.main { border-color:rgba(139,123,255,.55); background:linear-gradient(180deg,rgba(108,79,224,.16),var(--panel)); }
+  .card h3 { margin:0; font-size:20px; }
+  .card p { margin:0; color:var(--muted); font-size:15px; flex:1; }
+  .card .btn { justify-content:center; }
+  .tag { font-size:13px; color:var(--muted); }
+
+  details { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px 20px; margin-bottom:10px; }
+  summary { cursor:pointer; font-weight:600; }
+  details p { color:var(--muted); margin:10px 0 0; }
+
+  footer { margin-top:90px; padding:28px 0 44px; border-top:1px solid var(--line); color:var(--muted); font-size:14px; }
+  footer .wrap { display:flex; flex-wrap:wrap; gap:8px 24px; justify-content:space-between; }
+  @media (max-width:640px){ nav .links a:not(.btn){ display:none; } .hero{padding-top:36px;} }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header class="top"><div class="logo"><span aria-hidden="true"></span>Simply Cast</div>
-    <a href="#download">Скачать</a></header>
+  <nav>
+    <a class="logo" href="#"><i aria-hidden="true"></i>Simply Cast</a>
+    <div class="links"><a href="#features">Возможности</a><a href="#remote">Пульт</a><a href="#faq">Вопросы</a>
+      <a class="btn primary" style="padding:9px 18px" href="#download">Скачать</a></div>
+  </nav>
 
-  <h1>Живой эфир с одного компьютера. Бесплатно.</h1>
-  <p class="lead">Камеры, экраны, NDI и веб-графика — в Program, в запись и в стрим одновременно. Без ключей и активации.</p>
-  <a class="btn dl-win" href="SimplyCast-Setup-0.1.0.exe">Скачать для Windows</a> <a class="btn dl-apk" href="#download" style="background:var(--surface);border:1px solid var(--border)">Пульт для Android (APK)</a> <a class="dl-all" href="#download">Все релизы</a>
-  <p class="note">Версия 0.1.0 · 24 МБ · Windows 10 (2004) и 11, 64 бит</p>
-  <div class="shot"><img src="screenshot.png" width="1616" height="939" alt="Главное окно Simply Cast: Preview с часами, Program с графикой LIVE, полоса входов и микшер"></div>
+  <header class="hero">
+    <div class="badges"><span class="pill prev">ПРЕВЬЮ</span><span class="pill live">ЭФИР</span></div>
+    <h1>Видеомикшер,<br><em>который не просит денег</em></h1>
+    <p class="lead">Камеры, экраны, NDI и веб-графика — в эфир, в запись и в стрим одновременно. Без ключей, активации и ограничений по разрешению.</p>
+    <div class="cta">
+      <a class="btn primary dl-win" href="SimplyCast-Setup-0.1.0.exe">⬇ Скачать для Windows</a>
+      <a class="btn dl-apk" href="#download">📱 Пульт для Android</a>
+    </div>
+    <p class="meta">Версия 0.1.0 · 27 МБ · Windows 10 (2004) и 11, 64 бит</p>
+    <div class="shot"><img src="screenshot.png" width="1920" height="1100" alt="Главное окно Simply Cast: превью и эфир, переходы, полоса входов, аудиомикшер и выходы"></div>
+  </header>
 
-  <section>
-    <h2>Знакомо?</h2>
+  <section id="features">
+    <h2>Всё для живого эфира</h2>
+    <p class="sub">Знакомый рабочий процесс: собрали кадр в превью, перевели в эфир — переходом, T-bar или клавишей.</p>
     <div class="grid">
-      <div class="card"><h3>Нужное — в старшем тарифе</h3><p>Разрешение или функция открываются только в дорогой лицензии, а ключ может истечь или оказаться у чужих.</p></div>
-      <div class="card"><h3>Падение посреди эфира</h3><p>Одна зависшая камера тянет за собой всю программу — и эфир вместе с ней.</p></div>
+      <div class="f"><div class="ic">▶</div><b>Эфир и превью</b><p>Врезка и авто-переход, Fade, Wipe, Slide, CubeZoom, T-bar и «в чёрное».</p></div>
+      <div class="f"><div class="ic">◉</div><b>Любые источники</b><p>Камеры, экран, видео и картинки, NDI, веб-страницы, титры, часы и цвет.</p></div>
+      <div class="f"><div class="ic">⇄</div><b>Стрим и запись</b><p>Файл, RTMP(S) и SRT — сразу в несколько направлений. Кодирование на NVIDIA или AMD.</p></div>
+      <div class="f"><div class="ic">♪</div><b>Аудиомикшер</b><p>Шины, solo, AFV, метры и громкость в LUFS — звук синхронен с видео по построению.</p></div>
+      <div class="f"><div class="ic">⚑</div><b>Не падает в эфире</b><p>Камера без сигнала отпускается, стрим переподключается, проект возвращается после сбоя.</p></div>
+      <div class="f"><div class="ic">🔒</div><b>Ключи в безопасности</b><p>Ключи стримов лежат в диспетчере учётных данных Windows, а не в файле проекта.</p></div>
     </div>
   </section>
 
   <section>
-    <h2>Как это работает</h2>
-    <ol>
-      <li><span class="num">1.</span> Добавьте входы: камеры, экраны, видео, NDI, веб-страницы, титры.</li>
-      <li><span class="num">2.</span> Соберите кадр в Preview и переведите в Program — переходом, T-bar или клавишей.</li>
-      <li><span class="num">3.</span> Запишите и выйдите в эфир: файл, RTMP(S), SRT — сразу несколько направлений.</li>
-    </ol>
-  </section>
-
-  <section>
-    <h2>Почему спокойнее</h2>
-    <div class="grid">
-      <div class="card"><h3>Бесплатно целиком</h3><p>Нет уровней, ключей и активации. Ничего не истекает.</p></div>
-      <div class="card"><h3>Сбой не тянет за собой всё</h3><p>Камера без сигнала отпускается и не держит программу.</p></div>
-      <div class="card"><h3>Шоу возвращается</h3><p>Автосохранение и возврат после сбоя; несколько копий не мешают друг другу.</p></div>
-      <div class="card"><h3>Эфир держится</h3><p>Стрим переподключается сам, запись делится на части — каждая открывается отдельно.</p></div>
-      <div class="card"><h3>Ключи не на виду</h3><p>Ключи стримов хранятся в диспетчере учётных данных Windows, не в файле проекта.</p></div>
-      <div class="card"><h3>Для парка машин</h3><p>Тихая установка без окон лицензии: <code>/VERYSILENT</code>.</p></div>
+    <h2>Три шага до эфира</h2>
+    <p class="sub">&nbsp;</p>
+    <div class="steps">
+      <div class="step"><b>Добавьте входы</b><p>Камера, экран, видеофайл или мастер первого шоу — плитки появятся сами.</p></div>
+      <div class="step"><b>Соберите кадр</b><p>Выберите вход в превью и переведите в эфир переходом или клавишей Space.</p></div>
+      <div class="step"><b>Выходите в эфир</b><p>Нажмите «Выйти в эфир» или «Записать» — можно и то и другое.</p></div>
     </div>
-    <p class="note">В работе: здоровье эфира на экране и в API, громкость в LUFS, защита Program от случайных правок.</p>
   </section>
 
-  <section>
-    <h2>Цена</h2>
-    <table>
-      <tr><th>Цена</th><td>Бесплатно, для любого использования</td></tr>
-      <tr><th>Ключи и активация</th><td>Нет</td></tr>
-      <tr><th>Ограничения по разрешению и входам</th><td>Нет</td></tr>
-    </table>
-  </section>
-
-  <section>
-    <h2>Вопросы</h2>
-    <dl>
-      <dt>Что нужно для записи и стрима?</dt><dd>Любой компьютер с Windows 10/11. Simply Cast кодирует видеокартой NVIDIA или AMD, а без них — встроенным кодером Windows (Intel Quick Sync или программным). Для AV1 нужна NVIDIA или AMD.</dd>
-      <dt>Нужен ли NDI?</dt><dd>Нет: NDI-движок идут в комплекте с программой — входы и выход NDI работают сразу.</dd>
-      <dt>Работает ли с пультами?</dt><dd>HTTP и TCP API, веб-пульт для телефона; для пультов, рассчитанных на распространённый формат XML, — «Проект → Совместимый XML API».</dd>
-      <dt>Отправляет ли Simply Cast данные?</dt><dd>Нет. Он ищет NDI-источники в локальной сети и работает с тем, что вы настроили.</dd>
-      <dt>Есть ли версия для Mac?</dt><dd>Нет.</dd>
-    </dl>
+  <section id="remote">
+    <h2>Управляйте с телефона и планшета</h2>
+    <p class="sub">Пульт для Android подключается к компьютеру по Wi-Fi: живые мониторы, переключение входов и переходы. Камеру телефона можно использовать как источник.</p>
+    <div class="grid">
+      <div class="f"><b>Планшетная раскладка</b><p>Мониторы 16:9 без чёрных полос и входы сеткой — как на компьютере.</p></div>
+      <div class="f"><b>Сам находит ПК</b><p>Включите «Управление с телефона» в настройках, отсканируйте QR — и готово.</p></div>
+      <div class="f"><b>Камера телефона</b><p>Телефон становится ещё одним входом с минимальной задержкой.</p></div>
+    </div>
   </section>
 
   <section id="download">
-    <h2>Соберите первый эфир за несколько минут</h2>
-    <a class="btn dl-win" href="SimplyCast-Setup-0.1.0.exe">Скачать для Windows</a> <a class="btn dl-apk" href="#download" style="background:var(--surface);border:1px solid var(--border)">Пульт для Android (APK)</a> <a class="dl-all" href="#download">Все релизы</a>
-    <p class="note">Simply Cast использует Qt и FFmpeg по LGPL; лицензии — в папке licenses программы. NDI® — зарегистрированный товарный знак Vizrt NDI AB.</p>
+    <h2>Скачать</h2>
+    <p class="sub">Бесплатно, для любого использования. Никакой регистрации.</p>
+    <div class="dl">
+      <div class="card main"><h3>Установщик для Windows</h3><p>Обычная установка с ярлыками и удалением. Для парка машин — тихая установка с ключом <code>/VERYSILENT</code>.</p>
+        <a class="btn primary dl-win" href="SimplyCast-Setup-0.1.0.exe">⬇ SimplyCast-Setup-0.1.0.exe</a><span class="tag">27 МБ · Windows 10/11 x64</span></div>
+      <div class="card"><h3>Один файл, без установки</h3><p>Переносная сборка: запускается из любой папки, ничего не прописывает в системе.</p>
+        <a class="btn dl-single" href="#download">⬇ SimplyCast-Single-0.1.0.exe</a><span class="tag">41 МБ · Windows 10/11 x64</span></div>
+      <div class="card"><h3>Пульт для Android</h3><p>Приложение для управления эфиром с телефона или планшета. Разрешите установку из неизвестных источников.</p>
+        <a class="btn dl-apk" href="#download">⬇ SimplyCast-Remote.apk</a><span class="tag">1,5 МБ · Android</span></div>
+    </div>
+    <p class="meta"><a class="dl-all" href="#download">Все версии и история изменений →</a></p>
   </section>
 
-  <footer>Simply Cast 0.1.0 · © <a href="https://petrovich.party/">Petrovich.party</a> · <a href="privacy.html">Конфиденциальность</a></footer>
+  <section id="faq">
+    <h2>Вопросы</h2>
+    <p class="sub">&nbsp;</p>
+    <details><summary>Что нужно для записи и стрима?</summary><p>Любой компьютер с Windows 10/11. Simply Cast кодирует видеокартой NVIDIA или AMD, а без них — встроенным кодером Windows. Для AV1 нужна NVIDIA или AMD.</p></details>
+    <details><summary>Нужен ли NDI отдельно?</summary><p>Нет, движок NDI идёт в комплекте: входы и выход NDI работают сразу.</p></details>
+    <details><summary>Работает ли с пультами и по API?</summary><p>Есть HTTP и TCP API, веб-пульт для телефона и приложение для Android. Для пультов, рассчитанных на распространённый XML-формат, — «Проект → Совместимый XML API».</p></details>
+    <details><summary>Отправляет ли Simply Cast данные?</summary><p>Нет. Он ищет NDI-источники в локальной сети и работает только с тем, что вы настроили.</p></details>
+    <details><summary>Есть ли версия для Mac?</summary><p>Пока нет.</p></details>
+  </section>
 </div>
+
+<footer>
+  <div class="wrap">
+    <span>Simply Cast 0.1.0 · © <a href="https://petrovich.party/">Petrovich.party</a> · <a href="privacy.html">Конфиденциальность</a></span>
+    <span>Qt и FFmpeg по LGPL, лицензии — в папке licenses. NDI® — товарный знак Vizrt NDI AB.</span>
+  </div>
+</footer>
+
 <script>
   // Страница на GitHub Pages: owner.github.io/repo -> файлы последнего релиза репозитория
   (function () {
     var m = location.hostname.match(/^(.+)\.github\.io$/), repo = location.pathname.split('/')[1];
     if (!m || !repo) return;
-    var base = 'https://github.com/' + m[1] + '/' + repo + '/releases/latest/download/';
-    document.querySelectorAll('.dl-win').forEach(function (a) { a.href = base + 'SimplyCast-Setup-0.1.0.exe'; });
-    document.querySelectorAll('.dl-apk').forEach(function (a) { a.href = base + 'SimplyCast-Remote.apk'; });
-    document.querySelectorAll('.dl-all').forEach(function (a) { a.href = 'https://github.com/' + m[1] + '/' + repo + '/releases'; });
+    var root = 'https://github.com/' + m[1] + '/' + repo, base = root + '/releases/latest/download/';
+    function set(sel, url) { document.querySelectorAll(sel).forEach(function (a) { a.href = url; }); }
+    set('.dl-win', base + 'SimplyCast-Setup-0.1.0.exe');
+    set('.dl-single', base + 'SimplyCast-Single-0.1.0.exe');
+    set('.dl-apk', base + 'SimplyCast-Remote.apk');
+    set('.dl-all', root + '/releases');
   })();
 </script>
 </body>
