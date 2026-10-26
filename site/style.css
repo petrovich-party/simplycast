@@ -206,3 +206,10 @@
   .wide img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line);box-shadow:0 40px 80px -24px rgba(0,0,0,.8)}
   .wide p{text-align:center;color:var(--muted);font-size:14px;margin-top:14px}
   @media(max-width:640px){.phones{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:68%;overflow-x:auto;scroll-snap-type:x mandatory}.phone{scroll-snap-align:center}.phone:nth-child(2){margin-top:0}}
+
+  /* Simply Cast Remote: скриншоты планшета */
+  .tablet img{display:block;width:100%;height:auto;border-radius:14px;aspect-ratio:16/9;object-fit:cover}
+  .tabs2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,3vw,32px);max-width:1000px;margin:0 auto}
+  .tabs2 figure{margin:0}
+  .tabs2 figcaption{text-align:center;color:var(--muted);font-size:14px;margin-top:14px}
+  @media(max-width:700px){.tabs2{grid-template-columns:1fr}}
