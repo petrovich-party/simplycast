@@ -194,3 +194,15 @@
   footer .cols a{display:block;color:var(--muted);padding:3px 0}
   footer .bot{width:100%;border-top:1px solid var(--line);margin-top:26px;padding-top:20px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
   @media (max-width:760px){footer .cols{grid-template-columns:1fr 1fr}.tbl th:nth-child(3),.tbl td:nth-child(3){display:none}.tbl th,.tbl td{padding:14px}}
+
+  /* скриншоты Simply Display */
+  .phones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,3vw,34px);max-width:900px;margin:0 auto;align-items:start}
+  .phone{margin:0}
+  .phone .fr{border-radius:30px;padding:7px;background:linear-gradient(160deg,rgba(255,255,255,.3),rgba(255,255,255,.05) 40%,rgba(139,123,255,.35));box-shadow:0 40px 80px -24px rgba(0,0,0,.8),0 0 90px rgba(100,90,255,.25)}
+  .phone img{display:block;width:100%;height:auto;aspect-ratio:1080/2340;object-fit:cover;border-radius:24px}
+  .phone figcaption{text-align:center;color:var(--muted);font-size:14px;margin-top:14px}
+  .phone:nth-child(2){margin-top:34px}
+  .wide{max-width:900px;margin:56px auto 0}
+  .wide img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line);box-shadow:0 40px 80px -24px rgba(0,0,0,.8)}
+  .wide p{text-align:center;color:var(--muted);font-size:14px;margin-top:14px}
+  @media(max-width:640px){.phones{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:68%;overflow-x:auto;scroll-snap-type:x mandatory}.phone{scroll-snap-align:center}.phone:nth-child(2){margin-top:0}}
