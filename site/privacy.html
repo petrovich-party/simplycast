@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simply Cast — политика конфиденциальности</title>
+<meta name="description" content="Какие данные обрабатывает Simply Cast и куда они передаются.">
+<style>
+  /* colours: replica/design/tokens.json, same as index.html */
+  :root { --bg:#15171a; --surface:#23262b; --border:#3a3e45; --text:#e4e6ea; --muted:#a3a9b2; --accent:#a493ff; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.6 "Segoe UI", system-ui, sans-serif; }
+  .wrap { max-width:820px; margin:0 auto; padding:24px 16px 48px; }
+  a { color:var(--accent); }
+  h1 { font-size:clamp(26px,4vw,36px); line-height:1.2; margin:24px 0 8px; }
+  h2 { font-size:20px; margin:32px 0 8px; }
+  .muted { color:var(--muted); font-size:14px; }
+  hr { border:0; border-top:1px solid var(--border); margin:48px 0; }
+  ul { padding-left:22px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<p><a href="index.html">← Simply Cast</a></p>
+
+<h1>Политика конфиденциальности Simply Cast</h1>
+<p class="muted">Действует с 26 октября 2026 года. Разработчик: Petrovich.party.</p>
+
+<h2>Коротко</h2>
+<p>Simply Cast не собирает статистику, не показывает рекламу, не требует учётной записи и ничего не отправляет
+разработчику. Всё, что вы делаете в программе, остаётся на вашем компьютере, пока вы сами не отправите это
+по выбранному адресу (стрим, NDI, запись).</p>
+
+<h2>Камера, микрофон, экран</h2>
+<p>Программа использует камеру, микрофон и захват экрана только для входов, которые вы добавили сами.
+Изображение и звук идут в ваш Program, запись на диск и в выходы, которые вы настроили: стрим-сервер,
+NDI в локальной сети, виртуальную камеру. Ни на какие другие адреса они не передаются.</p>
+
+<h2>Что хранится на компьютере</h2>
+<ul>
+  <li>Проекты — в файлах, которые вы сохраняете сами; автосохранения и профиль встроенного браузера —
+      в папке данных программы (<code>%LOCALAPPDATA%</code>).</li>
+  <li>Настройки — в реестре Windows текущего пользователя.</li>
+  <li>Ключи стримов, пароли и токены — в диспетчере учётных данных Windows. В журналы и на экран они не выводятся.</li>
+</ul>
+<p>При удалении программы из Microsoft Store Windows удаляет её папку данных.</p>
+
+<h2>Сетевые подключения</h2>
+<p>Программа подключается только туда, куда вы её направили:</p>
+<ul>
+  <li>к стрим-серверам (RTMP, RTMPS, SRT), адреса и ключи которых вы ввели;</li>
+  <li>к источникам и приёмникам NDI в вашей локальной сети;</li>
+  <li>к Twitch или YouTube — только если вы сами нажали «Подключить», чтобы получить ключ стрима;
+      действуют политики этих сервисов;</li>
+  <li>к ИИ-сервису (по умолчанию OpenAI) — только если вы включили эту функцию и указали свой ключ;
+      отправляется текст вашего запроса; действует политика выбранного сервиса;</li>
+  <li>к веб-страницам, видео и таблицам (например, Google Таблицам), адреса которых вы добавили как входы
+      или источники данных.</li>
+</ul>
+<p>Для скриптов и внешних контроллеров программа открывает управляющий HTTP API (по умолчанию порт 8088),
+доступный только с этого компьютера. Другим устройствам вашей сети он доступен, только если вы включили
+«Настройки → Управление с телефона»; вход с телефона защищён ключом из QR-кода.</p>
+
+<h2>Дети</h2>
+<p>Программа не предназначена специально для детей и не собирает сведений о возрасте пользователей.</p>
+
+<h2>Изменения и связь</h2>
+<p>Если политика изменится, новая версия появится на этой странице с новой датой.
+Вопросы — через сайт <a href="https://petrovich.party/">petrovich.party</a>.</p>
+
+<hr>
+
+<h1 lang="en">Simply Cast Privacy Policy</h1>
+<div lang="en">
+<p class="muted">Effective October 26, 2026. Developer: Petrovich.party.</p>
+
+<h2>In short</h2>
+<p>Simply Cast collects no analytics, shows no ads, needs no account and sends nothing to the developer.
+Everything you do stays on your computer until you send it to a destination you chose (a stream, NDI, a recording).</p>
+
+<h2>Camera, microphone, screen</h2>
+<p>The app uses the camera, microphone and screen capture only for inputs you add. Video and audio go to your
+Program, to recordings on disk and to outputs you configure: a streaming server, NDI on your local network,
+the virtual camera. They are not sent anywhere else.</p>
+
+<h2>What is stored on your computer</h2>
+<ul>
+  <li>Projects, in files you save; autosaves and the built-in browser profile, in the app data folder.</li>
+  <li>Settings, in the current user's Windows registry.</li>
+  <li>Stream keys, passwords and tokens, in Windows Credential Manager. They are never written to logs or shown.</li>
+</ul>
+<p>Uninstalling the Microsoft Store app removes its data folder.</p>
+
+<h2>Network connections</h2>
+<p>The app connects only where you point it: streaming servers (RTMP, RTMPS, SRT) you entered; NDI sources and
+receivers on your local network; Twitch or YouTube, only when you click Connect to get a stream key; an AI service
+(OpenAI by default), only when you enable it with your own key, which receives the text of your request; web pages,
+videos and spreadsheets you add as inputs or data sources. The services' own policies apply to them.</p>
+<p>For scripts and external controllers the app runs a control HTTP API (port 8088 by default) reachable only
+from this computer. Other devices on your network can reach it only after you enable Settings → Phone remote;
+the phone signs in with the key from the QR code.</p>
+
+<h2>Children</h2>
+<p>The app is not directed at children and collects no information about users' age.</p>
+
+<h2>Changes and contact</h2>
+<p>A changed policy is published on this page with a new date. Questions: <a href="https://petrovich.party/">petrovich.party</a>.</p>
+</div>
+</div>
+</body>
+</html>
