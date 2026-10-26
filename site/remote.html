@@ -4,52 +4,71 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Simply Cast Remote — пульт для Android</title>
-<meta name="description" content="Пульт для Simply Cast на Android: живые мониторы, переключение входов и переходы с телефона или планшета.">
+<meta name="description" content="Пульт для Simply Cast на телефоне и планшете: превью и эфир на экране, переключение входов, переходы, камера телефона как вход.">
+<meta property="og:type" content="website">
 <meta property="og:title" content="Simply Cast Remote — пульт для Android">
-<meta property="og:description" content="Пульт для Simply Cast на Android: живые мониторы, переключение входов и переходы с телефона или планшета.">
-<meta property="og:image" content="https://simply-app.pro/screenshot.png">
-<meta name="theme-color" content="#07090f">
-<link rel="stylesheet" href="style.css">
+<meta property="og:description" content="Пульт для Simply Cast на телефоне и планшете: превью и эфир на экране, переключение входов, переходы, камера телефона как вход.">
+<meta property="og:image" content="https://simply-app.pro/img/cast-main.jpg">
+<meta property="og:url" content="https://simply-app.pro/remote.html">
+<meta name="theme-color" content="#f4f2ed" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1114" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2314161a'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23e03a2b'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Onest:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="main.css">
 </head>
-<body class="remote">
-<div class="bg" aria-hidden="true"><div class="blob one"></div><div class="blob two"></div><div class="blob three"></div></div>
-<header class="nav"><div class="wrap"><nav>
-  <a class="logo" href="index.html"><i aria-hidden="true"></i>Simply</a>
-  <div class="links">
-    <div class="dd"><a href="index.html#apps">Приложения</a><div class="dd-m">
-      <a href="cast.html">Simply Cast<small>Видеомикшер для Windows</small></a>
-      <a href="display.html">Simply Display<small>Второй экран по сети</small></a>
-      <a href="remote.html">Simply Cast Remote<small>Пульт для Android</small></a></div></div>
-    <a href="index.html#solutions">Решения</a><a href="support.html">Поддержка</a><a class="go" href="download.html">Скачать</a>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="index.html"><i aria-hidden="true"></i>Simply</a>
+  <nav class="menu" aria-label="Основная">
+    <a href="cast.html">Simply Cast</a>
+    <a href="display.html">Simply Display</a>
+    <a href="remote.html" aria-current="page">Remote</a>
+    <a href="support.html">Поддержка</a>
+    <a class="dl" href="download.html">Скачать</a>
+  </nav>
+</div></header>
+<main>
+<div class="wrap">
+  <div class="hero">
+    <div class="eyebrow"><b>●</b>Simply Cast Remote · Android · 0.3.3</div>
+    <h1 style="max-width:14ch">Эфиром — с планшета.</h1>
+    <p class="lead">Превью и эфир на экране, переключение входов, переходы и оверлеи. Пульт сам находит компьютер с Simply Cast в вашей сети.</p>
+    <div class="cta"><a class="btn solid dl-apk" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg>Скачать APK <small>1,5 МБ</small></a><a class="btn" href="cast.html">О Simply Cast <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <p class="note">Нужен Simply Cast на компьютере · Android с разрешением установки из неизвестных источников</p>
   </div>
-</nav></div></header>
 
-<main class="wrap">
-  <div class="hero"><div class="crumb"><a href="index.html">Simply</a> / Simply Cast Remote</div>
-    <div class="chip"><span class="dot" style="background:var(--ok)"></span>Для Android</div>
-    <h1>Эфиром — <span class="grad">с планшета.</span></h1>
-    <p class="lead">Пульт для Simply Cast: живые мониторы, переключение входов и переходы по Wi-Fi. Камеру телефона можно использовать как источник.</p>
-    <div class="cta"><a class="btn primary dl-apk" href="#">Скачать APK</a><a class="btn" href="cast.html">О Simply Cast</a></div>
-    <p class="meta">1,5 МБ · Android · нужен Simply Cast на компьютере</p>
-    <div class="stage rv" style="max-width:760px"><div class="tablet"><div class="scr"><div class="m p">ПРЕВЬЮ</div><div class="m l">15:28:25</div><div class="g"><i></i><i></i><i></i><i></i><i></i></div></div></div></div>
-  </div>
   <section>
-    <div class="steps">
-      <div class="step rv"><em class="grad">1</em><h3>Включите на ПК</h3><p>В Simply Cast: «Настройки → Управление с телефона (Android)».</p></div>
-      <div class="step rv"><em class="grad">2</em><h3>Отсканируйте QR</h3><p>Приложение само найдёт компьютер в сети.</p></div>
-      <div class="step rv"><em class="grad">3</em><h3>Управляйте</h3><p>Планшетная раскладка: мониторы 16:9 и входы сеткой.</p></div>
+    <div class="sec-head rv"><div><div class="eyebrow"><b>01</b>Возможности</div></div><div><h2>Режиссёрский пульт.</h2></div></div>
+    <div class="rows">
+      <div class="row rv"><span class="n">01</span><h3>Живые мониторы</h3><p>Превью и эфир в формате 16:9 прямо на экране планшета.</p><div class="tags"></div></div>
+      <div class="row rv"><span class="n">02</span><h3>Входы и переходы</h3><p>Выбирайте вход в превью и переводите в эфир врезкой или эффектом, включайте оверлеи.</p><div class="tags"><span>Fade</span><span>Wipe</span><span>Slide</span></div></div>
+      <div class="row rv"><span class="n">03</span><h3>Камера телефона</h3><p>Телефон работает ещё одним входом микшера с минимальной задержкой.</p><div class="tags"></div></div>
+      <div class="row rv"><span class="n">04</span><h3>Автопоиск</h3><p>Включите «Управление с телефона» в Simply Cast и отсканируйте QR — пульт найдёт компьютер сам.</p><div class="tags"><span>QR</span></div></div>
     </div>
   </section>
-  <div class="final rv"><h2>Установка без Google Play.</h2><p>Скачайте APK и разрешите установку из неизвестных источников.</p><a class="btn primary dl-apk" href="#">Скачать APK</a></div>
+
+  <section>
+    <div class="sec-head rv"><div><div class="eyebrow"><b>02</b>Подключение</div></div><div><h2>Три действия.</h2></div></div>
+    <div class="steps s3 rv">
+      <div class="step"><h3>В Simply Cast</h3><p>Откройте «Настройки → Управление с телефона (Android)».</p></div>
+      <div class="step"><h3>На планшете</h3><p>Установите APK и откройте приложение в той же сети Wi‑Fi.</p></div>
+      <div class="step"><h3>Отсканируйте QR</h3><p>Пульт подключится и покажет превью и эфир.</p></div>
+    </div>
+  </section>
+
+  <div class="close rv"><div><h2>Пульт к вашему микшеру.</h2><p>Бесплатно, без регистрации.</p></div><a class="btn solid dl-apk" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg>Скачать APK</a></div>
+</div>
 </main>
-<footer><div class="wrap"><div class="cols">
-  <div><a class="logo" href="index.html" style="color:var(--text)"><i aria-hidden="true"></i>Simply</a><p style="margin:12px 0 0">Простые бесплатные приложения для эфира, экранов и управления ими.</p></div>
-  <div><h4>Приложения</h4><a href="cast.html">Simply Cast</a><a href="display.html">Simply Display</a><a href="remote.html">Simply Cast Remote</a></div>
-  <div><h4>Скачать</h4><a href="download.html">Все загрузки</a><a class="dl-all" href="#">История версий</a></div>
-  <div><h4>Поддержка</h4><a href="support.html">Вопросы</a><a class="dl-issues" href="#">Сообщить о проблеме</a><a href="privacy.html">Конфиденциальность</a></div>
-  <div class="bot"><span>© <a href="https://petrovich.party/" style="display:inline;color:var(--text)">Petrovich.party</a> · <a class="dl-repo" href="#" style="display:inline;color:var(--text)">GitHub</a></span>
-  <span>Qt и FFmpeg по LGPL. NDI® — товарный знак Vizrt NDI AB.</span></div>
-</div></div></footer>
+<footer><div class="wrap">
+  <div class="cols">
+    <div><a class="brand" href="index.html"><i aria-hidden="true"></i>Simply</a><p class="about">Бесплатные приложения для эфира, вторых экранов и управления ими. Разработка — Petrovich.party.</p></div>
+    <div><h4>Приложения</h4><a href="cast.html">Simply Cast</a><a href="display.html">Simply Display</a><a href="remote.html">Simply Cast Remote</a></div>
+    <div><h4>Загрузки</h4><a href="download.html">Все файлы</a><a class="dl-all" href="#">История версий</a></div>
+    <div><h4>Помощь</h4><a href="support.html">Вопросы и ответы</a><a class="dl-issues" href="#">Сообщить о проблеме</a><a href="privacy.html">Конфиденциальность</a></div>
+  </div>
+  <div class="bot"><span>© <a href="https://petrovich.party/">Petrovich.party</a> · <a class="dl-repo" href="#">GitHub</a></span><span>Qt и FFmpeg по LGPL. NDI® — товарный знак Vizrt NDI AB.</span></div>
+</div></footer>
 <script src="app.js"></script>
 </body>
 </html>
