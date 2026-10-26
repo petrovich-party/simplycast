@@ -4,103 +4,54 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Simply Display — второй экран по сети</title>
-<meta name="description" content="Телефон или планшет как второй монитор для Windows: видео H.264, касания, файлы, звук, буфер обмена. Трафик зашифрован. Бесплатно.">
-<meta property="og:type" content="website">
+<meta name="description" content="Телефон или планшет как второй монитор для Windows: видео H.264, касания, файлы, шифрование.">
 <meta property="og:title" content="Simply Display — второй экран по сети">
-<meta property="og:description" content="Телефон или планшет как второй монитор для Windows: видео H.264, касания, файлы, звук, буфер обмена. Трафик зашифрован. Бесплатно.">
-<meta property="og:image" content="https://simply-app.pro/img/display-home.jpg">
-<meta property="og:url" content="https://simply-app.pro/display.html">
-<meta name="theme-color" content="#f4f2ed" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0f1114" media="(prefers-color-scheme: dark)">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2314161a'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23e03a2b'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Onest:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="main.css">
+<meta property="og:description" content="Телефон или планшет как второй монитор для Windows: видео H.264, касания, файлы, шифрование.">
+<meta property="og:image" content="https://simply-app.pro/screenshot.png">
+<meta name="theme-color" content="#07090f">
+<link rel="stylesheet" href="style.css">
 </head>
-<body>
-<header class="top"><div class="wrap">
-  <a class="brand" href="index.html"><i aria-hidden="true"></i>Simply</a>
-  <nav class="menu" aria-label="Основная">
-    <a href="cast.html">Simply Cast</a>
-    <a href="display.html" aria-current="page">Simply Display</a>
-    <a href="remote.html">Remote</a>
-    <a href="support.html">Поддержка</a>
-    <a class="dl" href="download.html">Скачать</a>
-  </nav>
-</div></header>
-<main>
-<div class="wrap">
-  <div class="hero">
-    <div class="eyebrow"><b>●</b>Simply Display · Windows и Android · 1.0.0</div>
-    <h1 style="max-width:16ch">Планшет как второй монитор для Windows.</h1>
-    <p class="lead">Показывает рабочий стол компьютера или расширяет его, возвращает касания и перо, передаёт файлы, звук и буфер обмена. Видео H.264 с аппаратным кодированием, весь трафик зашифрован.</p>
-    <div class="cta"><a class="btn solid" href="SimplyDisplay-Setup-1.0.0.exe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg>Для Windows <small>2,6 МБ</small></a><a class="btn" href="SimplyDisplay-Android.apk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg>Для Android <small>0,3 МБ</small></a></div>
-    <p class="note">Установите сервер на компьютер и приложение на планшет. Устройства должны быть в одной сети Wi‑Fi или соединены по USB.</p>
+<body class="display">
+<div class="bg" aria-hidden="true"><div class="blob one"></div><div class="blob two"></div><div class="blob three"></div></div>
+<header class="nav"><div class="wrap"><nav>
+  <a class="logo" href="index.html"><i aria-hidden="true"></i>Simply</a>
+  <div class="links">
+    <div class="dd"><a href="index.html#apps">Приложения</a><div class="dd-m">
+      <a href="cast.html">Simply Cast<small>Видеомикшер для Windows</small></a>
+      <a href="display.html">Simply Display<small>Второй экран по сети</small></a>
+      <a href="remote.html">Simply Cast Remote<small>Пульт для Android</small></a></div></div>
+    <a href="index.html#solutions">Решения</a><a href="support.html">Поддержка</a><a class="go" href="download.html">Скачать</a>
   </div>
-  <div class="stage rv"><div class="phones">
-    <figure class="phone"><div class="frame"><img src="img/display-home.jpg" width="720" height="1560" alt="Simply Display на Android: главный экран — зеркало, расширение, файлы, камера, телефон, фото"></div><figcaption>01 · Главный экран</figcaption></figure>
-    <figure class="phone"><div class="frame"><img src="img/display-connect.jpg" width="720" height="1560" alt="Simply Display на Android: подключение по QR-коду, адресу и PIN, по Wi‑Fi или USB"></div><figcaption>02 · Подключение по QR, адресу или USB</figcaption></figure>
-    <figure class="phone"><div class="frame"><img src="img/display-settings.jpg" width="720" height="1560" alt="Simply Display на Android: настройки — звук, буфер обмена, уведомления, звонки и SMS"></div><figcaption>03 · Настройки: звук, буфер, уведомления</figcaption></figure>
-  </div></div>
-  <div class="facts rv"><div class="fact"><b>H.264</b><span>NVENC, AMF, QSV или программное кодирование</span></div><div class="fact"><b>до 60 к/с</b><span>Wi‑Fi и USB</span></div><div class="fact"><b>AES‑256</b><span>PIN и шифрование всего трафика</span></div><div class="fact"><b>2,6 МБ</b><span>Установщик для Windows</span></div></div>
+</nav></div></header>
 
-  <section>
-    <div class="sec-head rv"><div><div class="eyebrow"><b>01</b>Как подключиться</div></div><div><h2>Минута на первую сессию.</h2></div></div>
-    <div class="steps rv">
-      <div class="step"><h3>Поставьте сервер</h3><p>Запустите установщик на компьютере. Окно сервера покажет QR-код, адрес и PIN.</p></div>
-      <div class="step"><h3>Поставьте приложение</h3><p>Установите APK на телефон или планшет. Разрешите установку из неизвестных источников.</p></div>
-      <div class="step"><h3>Подключитесь</h3><p>Наведите камеру на QR-код — или введите адрес компьютера и PIN. Есть подключение по USB.</p></div>
-      <div class="step"><h3>Выберите режим</h3><p>«Зеркало» повторяет экран компьютера, «Расширить» добавляет второй монитор.</p></div>
+<main class="wrap">
+  <div class="hero"><div class="crumb"><a href="index.html">Simply</a> / Simply Display</div>
+    <div class="chip"><span class="dot"></span>Версия 1.0.0 · бесплатно</div>
+    <h1>Второй экран<br><span class="grad">в вашем кармане.</span></h1>
+    <p class="lead">Компьютер отдаёт монитор на телефон, планшет или другой ПК, а касания и мышь возвращаются обратно. Видео H.264 с аппаратным кодированием и шифрование всего трафика.</p>
+    <div class="cta"><a class="btn primary" href="SimplyDisplay-Setup-1.0.0.exe">Скачать для Windows</a><a class="btn" href="SimplyDisplay-Android.apk">Скачать для Android</a></div>
+  </div>
+  <section style="padding-top:60px">
+    <div class="bento">
+      <div class="tile big w4 rv"><h3>Второй монитор по сети</h3><p>Зеркало или расширенный экран. Автопоиск компьютеров в сети, подключение по QR-коду или по USB.</p><div class="chips"><span>H.264 · NVENC/AMF/QSV</span><span>до 60 к/с</span><span>Wi-Fi и USB</span></div></div>
+      <div class="tile w2 rv"><h3>Шифрование</h3><p>PIN и AES-256-GCM для всего трафика.</p></div>
+      <div class="tile w2 rv"><h3>Файлы</h3><p>Передача в обе стороны, перетаскиванием на окно.</p></div>
+      <div class="tile w2 rv"><h3>Уведомления</h3><p>Уведомления планшета всплывают на ПК.</p></div>
+      <div class="tile w2 rv"><h3>Телефон на ПК</h3><p>Звонки, SMS и фото телефона прямо в окне на компьютере.</p></div>
+      <div class="tile w3 rv"><h3>Экран и камера планшета на ПК</h3><p>Показывайте экран телефона на компьютере, используйте камеру и микрофон планшета.</p></div>
+      <div class="tile w3 rv"><h3>Звук и буфер обмена</h3><p>Звук компьютера на клиенте, буфер обмена в обе стороны.</p></div>
     </div>
   </section>
-
-  <section>
-    <div class="sec-head rv"><div><div class="eyebrow"><b>02</b>Возможности</div></div><div><h2>Больше, чем второй экран.</h2><p class="sub">Вокруг одного защищённого соединения построено всё остальное.</p></div></div>
-    <div class="rows">
-      <div class="row rv"><span class="n">01</span><h3>Зеркало и расширение</h3><p>Экран компьютера на планшете или втором ПК. Касания, мышь и перо возвращаются обратно.</p><div class="tags"><span>H.264</span><span>касания</span><span>перо</span></div></div>
-      <div class="row rv"><span class="n">02</span><h3>Файлы</h3><p>Передача в обе стороны перетаскиванием на окно, список принятого в приложении.</p><div class="tags"><span>в обе стороны</span></div></div>
-      <div class="row rv"><span class="n">03</span><h3>Звук и буфер обмена</h3><p>Звук компьютера звучит на клиенте, текст копируется между устройствами.</p><div class="tags"><span>звук ПК</span><span>буфер</span></div></div>
-      <div class="row rv"><span class="n">04</span><h3>Уведомления</h3><p>Уведомления планшета или телефона всплывают на компьютере.</p><div class="tags"></div></div>
-      <div class="row rv"><span class="n">05</span><h3>Телефон на ПК</h3><p>Звонки и SMS в окне на компьютере. Снимки и скриншоты телефона открываются прямо в галерее на ПК.</p><div class="tags"><span>звонки</span><span>SMS</span><span>фото</span></div></div>
-      <div class="row rv"><span class="n">06</span><h3>Экран и камера на ПК</h3><p>Показывайте экран телефона на компьютере, используйте камеру и микрофон планшета.</p><div class="tags"><span>экран</span><span>камера</span><span>микрофон</span></div></div>
-      <div class="row rv"><span class="n">07</span><h3>Защита</h3><p>Подключение по PIN, весь трафик шифруется AES-256-GCM. Данные ходят только в вашей сети.</p><div class="tags"><span>PIN</span><span>AES-256-GCM</span></div></div>
-    </div>
-  </section>
-
-  <section>
-    <div class="pair">
-      <div><div class="eyebrow"><b>03</b>На компьютере</div><h2 style="margin-top:16px">Окно «Фото телефона».</h2>
-        <p>Галерея телефона открывается отдельным окном на ПК. Клик по снимку — оригинал в папке «Загрузки\SimplyDisplay».</p>
-        <ul class="list"><li><span><b>Окна на ПК</b> для файлов, уведомлений, звонков и фото</span></li><li><span><b>Значок в трее</b> и запуск без консоли</span></li></ul></div>
-      <div class="win rv"><img src="img/display-photos.png" width="956" height="699" loading="lazy" alt="Окно «Фото телефона» в Simply Display на Windows"></div>
-    </div>
-  </section>
-
-  <section id="download">
-    <div class="sec-head rv"><div><div class="eyebrow"><b>04</b>Загрузка</div></div><div><h2>Бесплатно, без регистрации.</h2></div></div>
-    <table class="tbl rv"><thead><tr><th>Файл</th><th>Платформа</th><th>Размер</th><th></th></tr></thead><tbody>
-      <tr><td><b>Simply Display · сервер</b><small>Версия 1.0.0. Установщик для компьютера</small></td><td class="mono">Windows 10/11 x64</td><td class="mono">2,6 МБ</td><td><a class="btn solid" href="SimplyDisplay-Setup-1.0.0.exe">Скачать</a></td></tr>
-      <tr><td><b>Simply Display · приложение</b><small>Версия 1.0.0. Для телефона и планшета</small></td><td class="mono">Android</td><td class="mono">0,3 МБ</td><td><a class="btn" href="SimplyDisplay-Android.apk">Скачать</a></td></tr>
-    </tbody></table>
-  </section>
-
-  <section>
-    <div class="sec-head rv"><div><div class="eyebrow"><b>05</b>Что важно знать</div></div><div><h2>Ограничения версии 1.0.</h2><p class="sub">Лучше сказать заранее.</p></div></div>
-    <div class="faq rv"><details><summary>Режим «Расширить» работает без второго монитора?</summary><p>Нет. В комплекте пока нет драйвера виртуального монитора: расширенный экран доступен, когда Windows видит второй дисплей — физический или созданный сторонним драйвером. Зеркало работает всегда.</p></details><details><summary>Слышен ли звонок на компьютере?</summary><p>Нет. Звонки и SMS можно принимать и отправлять с ПК, но Android не отдаёт звук разговора, поэтому он идёт через телефон.</p></details><details><summary>Какие порты открывать в брандмауэре?</summary><p>TCP 7777 для сессии и UDP 7778 для автопоиска компьютеров. Порты 7779–7781 нужны дополнительным функциям.</p></details><details><summary>Работает ли браузерный клиент?</summary><p>Встроенный клиент для браузера работает по http и рассчитан только на домашнюю сеть, поэтому по умолчанию выключен.</p></details><details><summary>Windows предупреждает при запуске. Это нормально?</summary><p>Приложение пока без платной цифровой подписи, поэтому SmartScreen может показать предупреждение. Нажмите «Подробнее → Выполнить в любом случае».</p></details></div>
-  </section>
-
-  <div class="close rv"><div><h2>Попробуйте на своём планшете.</h2><p>Установка занимает меньше минуты.</p></div><a class="btn solid" href="SimplyDisplay-Setup-1.0.0.exe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg>Скачать для Windows</a></div>
-</div>
+  <div class="final rv"><h2>Попробуйте сейчас.</h2><p>Поставьте сервер на компьютер, приложение — на телефон или планшет, отсканируйте QR-код.</p><a class="btn primary" href="SimplyDisplay-Setup-1.0.0.exe">Скачать для Windows</a></div>
 </main>
-<footer><div class="wrap">
-  <div class="cols">
-    <div><a class="brand" href="index.html"><i aria-hidden="true"></i>Simply</a><p class="about">Бесплатные приложения для эфира, вторых экранов и управления ими. Разработка — Petrovich.party.</p></div>
-    <div><h4>Приложения</h4><a href="cast.html">Simply Cast</a><a href="display.html">Simply Display</a><a href="remote.html">Simply Cast Remote</a></div>
-    <div><h4>Загрузки</h4><a href="download.html">Все файлы</a><a class="dl-all" href="#">История версий</a></div>
-    <div><h4>Помощь</h4><a href="support.html">Вопросы и ответы</a><a class="dl-issues" href="#">Сообщить о проблеме</a><a href="privacy.html">Конфиденциальность</a></div>
-  </div>
-  <div class="bot"><span>© <a href="https://petrovich.party/">Petrovich.party</a> · <a class="dl-repo" href="#">GitHub</a></span><span>Qt и FFmpeg по LGPL. NDI® — товарный знак Vizrt NDI AB.</span></div>
-</div></footer>
+<footer><div class="wrap"><div class="cols">
+  <div><a class="logo" href="index.html" style="color:var(--text)"><i aria-hidden="true"></i>Simply</a><p style="margin:12px 0 0">Простые бесплатные приложения для эфира, экранов и управления ими.</p></div>
+  <div><h4>Приложения</h4><a href="cast.html">Simply Cast</a><a href="display.html">Simply Display</a><a href="remote.html">Simply Cast Remote</a></div>
+  <div><h4>Скачать</h4><a href="download.html">Все загрузки</a><a class="dl-all" href="#">История версий</a></div>
+  <div><h4>Поддержка</h4><a href="support.html">Вопросы</a><a class="dl-issues" href="#">Сообщить о проблеме</a><a href="privacy.html">Конфиденциальность</a></div>
+  <div class="bot"><span>© <a href="https://petrovich.party/" style="display:inline;color:var(--text)">Petrovich.party</a> · <a class="dl-repo" href="#" style="display:inline;color:var(--text)">GitHub</a></span>
+  <span>Qt и FFmpeg по LGPL. NDI® — товарный знак Vizrt NDI AB.</span></div>
+</div></div></footer>
 <script src="app.js"></script>
 </body>
 </html>
