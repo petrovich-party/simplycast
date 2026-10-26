@@ -5,7 +5,7 @@
 **Видеомикшер для Windows. Эфир, запись и стрим — бесплатно, без ключей и подписок.**
 
 [![Скачать](https://img.shields.io/github/v/release/petrovich-party/simplycast?label=%D1%81%D0%BA%D0%B0%D1%87%D0%B0%D1%82%D1%8C&style=for-the-badge&color=6c4fe0)](https://github.com/petrovich-party/simplycast/releases/latest)
-[![Сайт](https://img.shields.io/badge/%D1%81%D0%B0%D0%B9%D1%82-petrovich--party.github.io-8b7bff?style=for-the-badge)](https://petrovich-party.github.io/simplycast/)
+[![Сайт](https://img.shields.io/badge/%D1%81%D0%B0%D0%B9%D1%82-simply--app.pro-8b7bff?style=for-the-badge)](https://simply-app.pro/)
 ![Windows](https://img.shields.io/badge/Windows-10%20%7C%2011-0078d4?style=for-the-badge&logo=windows11&logoColor=white)
 ![Android](https://img.shields.io/badge/%D0%BF%D1%83%D0%BB%D1%8C%D1%82-Android-34d399?style=for-the-badge&logo=android&logoColor=white)
 [![Загрузки](https://img.shields.io/github/downloads/petrovich-party/simplycast/total?style=for-the-badge&color=ff4d5e&label=%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8)](https://github.com/petrovich-party/simplycast/releases)
@@ -44,6 +44,6 @@
 
 ## Лицензии и сведения
 
-Simply Cast использует Qt и FFmpeg по LGPL; тексты лицензий — в папке `licenses` программы. NDI® — зарегистрированный товарный знак Vizrt NDI AB. [Политика конфиденциальности](https://petrovich-party.github.io/simplycast/privacy.html).
+Simply Cast использует Qt и FFmpeg по LGPL; тексты лицензий — в папке `licenses` программы. NDI® — зарегистрированный товарный знак Vizrt NDI AB. [Политика конфиденциальности](https://simply-app.pro/privacy.html).
 
 © [Petrovich.party](https://petrovich.party/)

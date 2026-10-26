@@ -7,7 +7,7 @@
 <meta name="description" content="Бесплатный видеомикшер для Windows: камеры, экраны, NDI и веб-графика в эфир, запись и стрим одновременно. Без ключей и активации. Пульт для Android в комплекте.">
 <meta property="og:title" content="Simply Cast — видеомикшер для Windows">
 <meta property="og:description" content="Эфир, запись и стрим с одного компьютера. Бесплатно, без ключей и активации.">
-<meta property="og:image" content="https://petrovich-party.github.io/simplycast/screenshot.png">
+<meta property="og:image" content="https://simply-app.pro/screenshot.png">
 <meta name="theme-color" content="#07090f">
 <style>
   :root{
@@ -276,9 +276,8 @@
 <script>
   // GitHub Pages: owner.github.io/repo -> файлы последнего релиза репозитория
   (function () {
-    var m = location.hostname.match(/^(.+)\.github\.io$/), repo = location.pathname.split('/')[1];
-    if (m && repo) {
-      var root = 'https://github.com/' + m[1] + '/' + repo, base = root + '/releases/latest/download/';
+    if (location.protocol !== 'file:') {
+      var root = 'https://github.com/petrovich-party/simplycast', base = root + '/releases/latest/download/';
       var set = function (s, u) { document.querySelectorAll(s).forEach(function (a) { a.href = u; }); };
       set('.dl-win', base + 'SimplyCast-Setup-0.1.0.exe'); set('.dl-single', base + 'SimplyCast-Single-0.1.0.exe');
       set('.dl-apk', base + 'SimplyCast-Remote.apk'); set('.dl-all', root + '/releases'); set('.dl-repo', root);
