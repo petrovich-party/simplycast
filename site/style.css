@@ -153,7 +153,7 @@
   @media (max-width:560px){.bento{grid-template-columns:1fr}.w2,.w3,.w4,.w2.half{grid-column:span 1}.btn{width:100%}.cta{flex-direction:column}.stat b{font-size:28px}}
 
   body.display{--a:#2dd4ff;--b:#5b8cff;--c:#7ef0d0}
-  body.remote{--a:#34d399;--b:#2dd4ff;--c:#a3f0c8}
+  body.rem{--a:#34d399;--b:#2dd4ff;--c:#a3f0c8}
   .links .dd{position:relative}
   .links .dd>a::after{content:"▾";margin-left:6px;font-size:11px}
   .dd-m{display:none;position:absolute;top:100%;left:0;min-width:290px;padding:8px;margin-top:6px;background:#0d111c;border:1px solid var(--line);border-radius:16px;box-shadow:0 30px 60px -10px rgba(0,0,0,.8)}
