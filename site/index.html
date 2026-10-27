@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Onest:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="main.css">
 </head>
-<body>
+<body class="home">
 <header class="top"><div class="wrap">
   <a class="brand" href="index.html"><i aria-hidden="true"></i>Simply</a>
   <nav class="menu" aria-label="Основная">
@@ -28,36 +28,38 @@
   </nav>
 </div></header>
 <main>
-<div class="wrap">
-  <div class="hero home">
-    <div>
-      <span class="chip"><b></b>0 ₽ · БЕЗ АККАУНТА</span>
-      <h1 style="margin-top:22px">Эфир, второй экран и пульт — <em>в одной сети</em>.</h1>
-      <p class="lead">Видеомикшер для Windows, планшет как монитор и управление с телефона. Бесплатно, без аккаунта.</p>
-      <div class="cta"><a class="btn solid" href="download.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg>Скачать для Windows</a><a class="btn" href="cast.html">Как это работает</a></div>
-      <div class="chips-row"><span class="chip">Windows 10/11</span><span class="chip">Android</span><span class="chip">LAN без облака</span></div>
-    </div>
-    <div class="devs">
-      <figure class="dev a"><span class="lv">LIVE</span><img src="img/cast-live.jpg" width="1920" height="1160" alt="Simply Cast: главное окно с превью, эфиром и переходами"></figure>
-      <figure class="dev b"><img src="img/display-home.jpg" width="1920" height="1152" alt="Simply Display на планшете: главный экран с функциями"></figure>
-      <figure class="dev c"><img src="img/remote-efir.jpg" width="1600" height="900" alt="Simply Cast Remote: пульт на телефоне, превью и эфир"></figure>
+<div class="heroband"><div class="wrap">
+  <div class="hero2">
+    <span class="chip"><b></b>0 ₽ · без аккаунта · LAN</span>
+    <h1>Эфир, второй экран и пульт — <em>в одной сети</em></h1>
+    <p class="lead">Видеомикшер для Windows, планшет как монитор и управление с телефона.</p>
+    <div class="cta"><a class="btn solid" href="download.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg>Скачать для Windows</a><a class="btn ghost" href="cast.html">Как это работает</a></div>
+    <div class="stage2">
+      <span class="float f1"><small>В эфире</small><b>00:42:18</b></span>
+      <span class="float f2"><i aria-hidden="true"></i>Запись · NDI · RTMP</span>
+      <figure class="bigwin"><span class="lv">LIVE</span><img src="img/cast-live.jpg" width="1920" height="1160" alt="Simply Cast: главное окно с превью, эфиром и переходами"></figure>
+      <figure class="minidev"><img src="img/remote-efir.jpg" width="1600" height="900" alt="Simply Cast Remote: пульт на телефоне, превью и эфир"></figure>
     </div>
   </div>
+</div></div>
+<div class="wrap">
   <div class="facts rv"><div class="fact"><b>0 ₽</b><span>Без тарифов, ключей и срока действия</span></div><div class="fact"><b>3</b><span>Приложения, которые работают вместе</span></div><div class="fact"><b>LAN</b><span>Данные не уходят из вашей сети</span></div><div class="fact"><b>H.264</b><span>Видео с шифрованием трафика</span></div></div>
 
   <section id="apps">
     <div class="sec-head rv"><div><div class="eyebrow"><b>01</b>Приложения</div></div><div><h2>Три программы, одна сеть.</h2><p class="sub">Каждая полезна сама по себе. Вместе — удобнее: пульт управляет микшером, а планшет может стать вторым монитором.</p></div></div>
     <div class="bento rv">
-      <div class="card big"><span class="tag">Windows · 0.1.0</span><h3 style="font-size:26px">Simply Cast</h3>
-        <p>Видеомикшер: камеры, экран, видеофайлы, NDI и веб-страницы — в эфир, запись и стрим одновременно. Переходы, титры, аудиомикшер с шинами и громкостью в LUFS.</p>
-        <div class="win"><img src="img/cast-inputs.jpg" width="1920" height="1160" loading="lazy" alt="Simply Cast: меню добавления входа — камера, экран, видео, NDI, документы, поток, веб-страница"></div>
-        <a class="more" href="cast.html">Подробнее →</a></div>
-      <div class="card"><span class="tag">Windows · Android · 1.0.0</span><h3>Simply Display</h3>
-        <p>Второй экран по сети: телефон или планшет показывает рабочий стол, принимает касания, передаёт файлы, звук и буфер обмена.</p>
-        <a class="more" href="display.html">Подробнее →</a></div>
+      <div class="card c1"><span class="tag">Windows · 0.1.0</span><h3>Simply Cast</h3>
+        <p>Видеомикшер: камеры, экран, видео, NDI и веб-страницы — в эфир, запись и стрим.</p>
+        <div class="art"><img src="img/cast-inputs.jpg" width="1920" height="1160" loading="lazy" alt="Simply Cast: меню добавления входа — камера, экран, видео, NDI, документы, поток, веб-страница"></div>
+        <a class="more" href="cast.html" aria-label="Подробнее о Simply Cast">Подробнее</a></div>
+      <div class="card c2"><span class="tag">Windows · Android · 1.0.0</span><h3>Simply Display</h3>
+        <p>Второй экран по сети: касания, файлы, звук и буфер обмена.</p>
+        <div class="art"><img src="img/display-home.jpg" width="1920" height="1152" loading="lazy" alt="Simply Display на планшете: главный экран с функциями"></div>
+        <a class="more" href="display.html" aria-label="Подробнее о Simply Display">Подробнее</a></div>
       <div class="card"><span class="tag">Android · 0.3.3</span><h3>Simply Cast Remote</h3>
-        <p>Пульт: превью и эфир на экране, переключение входов, переходы, камера телефона как вход.</p>
-        <a class="more" href="remote.html">Подробнее →</a></div>
+        <p>Пульт: превью и эфир на экране, входы, переходы, камера телефона как вход.</p>
+        <div class="art"><img src="img/remote-efir.jpg" width="1600" height="900" loading="lazy" alt="Simply Cast Remote: пульт на телефоне, превью и эфир"></div>
+        <a class="more" href="remote.html" aria-label="Подробнее о Simply Cast Remote">Подробнее</a></div>
     </div>
     <div class="net rv" aria-label="Схема: компьютер, сеть, планшет и телефон">
       <div class="node"><b><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></b>Компьютер<span>Cast</span></div>
