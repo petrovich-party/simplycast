@@ -3,78 +3,103 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Simply — приложения для эфира и экранов</title>
-<meta name="description" content="Семейство бесплатных приложений Petrovich.party: видеомикшер Simply Cast, второй экран Simply Display и пульт для Android.">
-<meta property="og:title" content="Simply — приложения для эфира и экранов">
-<meta property="og:description" content="Семейство бесплатных приложений Petrovich.party: видеомикшер Simply Cast, второй экран Simply Display и пульт для Android.">
-<meta property="og:image" content="https://simply-app.pro/screenshot.png">
-<meta name="theme-color" content="#07090f">
-<link rel="stylesheet" href="style.css">
+<title>Simply — приложения для эфира и вторых экранов</title>
+<meta name="description" content="Видеомикшер Simply Cast, второй экран Simply Display и пульт для Android. Бесплатно, без регистрации, работают в вашей локальной сети.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Simply — приложения для эфира и вторых экранов">
+<meta property="og:description" content="Видеомикшер Simply Cast, второй экран Simply Display и пульт для Android. Бесплатно, без регистрации, работают в вашей локальной сети.">
+<meta property="og:image" content="https://simply-app.pro/img/cast-live.jpg">
+<meta property="og:url" content="https://simply-app.pro/">
+<meta name="theme-color" content="#0b0c0f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2314161a'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23ff5a48'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Onest:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="main.css">
 </head>
-<body class="">
-<div class="bg" aria-hidden="true"><div class="blob one"></div><div class="blob two"></div><div class="blob three"></div></div>
-<header class="nav"><div class="wrap"><nav>
-  <a class="logo" href="index.html"><i aria-hidden="true"></i>Simply</a>
-  <div class="links">
-    <div class="dd"><a href="index.html#apps">Приложения</a><div class="dd-m">
-      <a href="cast.html">Simply Cast<small>Видеомикшер для Windows</small></a>
-      <a href="display.html">Simply Display<small>Второй экран по сети</small></a>
-      <a href="remote.html">Simply Cast Remote<small>Пульт для Android</small></a></div></div>
-    <a href="index.html#solutions">Решения</a><a href="support.html">Поддержка</a><a class="go" href="download.html">Скачать</a>
-  </div>
-</nav></div></header>
-
-<main class="wrap">
-  <div class="hero">
-    <div class="chip"><span class="dot"></span>Petrovich.party · семейство Simply</div>
-    <h1>Простые приложения<br><span class="grad">для эфира и экранов.</span></h1>
-    <p class="lead">Видеомикшер, второй экран и пульт управления. Бесплатно, без ключей и подписок, работают вместе в вашей сети.</p>
-    <div class="cta"><a class="btn primary" href="#apps">Выбрать приложение</a><a class="btn" href="download.html">Все загрузки</a></div>
-  </div>
-
-  <section id="apps" style="padding-top:70px">
-    <div class="rv"><div class="eyebrow">Приложения</div><h2>Всё семейство.</h2><p class="sub">Каждое приложение полезно само по себе — вместе они ещё удобнее.</p></div>
-    <div class="apps">
-      <a class="app rv" href="cast.html"><div class="thumb"><img src="screenshot.png" alt="Simply Cast"></div>
-        <div class="body"><h3>Simply Cast <span class="st">ДОСТУПНО</span></h3><p>Видеомикшер для Windows: камеры, экраны, NDI и веб-графика в эфир, запись и стрим.</p><span class="go">Подробнее <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
-      <a class="app d rv" href="display.html"><div class="thumb"><img src="img/display-server.png" alt="Simply Display на Windows" loading="lazy"></div>
-        <div class="body"><h3>Simply Display <span class="st">1.0</span></h3><p>Второй экран по сети: телефон или планшет становится монитором для компьютера, касания идут обратно.</p><span class="go">Подробнее <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
-      <a class="app r rv" href="remote.html"><div class="thumb"><img src="img/remote-efir.jpg" alt="Simply Cast Remote на планшете" loading="lazy"></div>
-        <div class="body"><h3>Simply Cast Remote <span class="st">ДОСТУПНО</span></h3><p>Пульт для Android: живые мониторы, переключение входов и переходы с телефона или планшета.</p><span class="go">Подробнее <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div></a>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="index.html"><i aria-hidden="true"></i>Simply</a>
+  <nav class="menu" aria-label="Основная">
+    <a href="cast.html">Simply Cast</a>
+    <a href="display.html">Simply Display</a>
+    <a href="remote.html">Remote</a>
+    <a href="support.html">Поддержка</a>
+    <a class="dl" href="download.html">Скачать</a>
+  </nav>
+</div></header>
+<main>
+<div class="wrap">
+  <div class="hero home">
+    <div>
+      <div class="eyebrow"><b>●</b>Petrovich.party · семейство Simply</div>
+      <h1 style="margin-top:22px">Эфир, второй экран и пульт — <em>в одной сети</em>.</h1>
+      <p class="lead">Видеомикшер для Windows, планшет как монитор и управление с телефона. Бесплатно, без аккаунта.</p>
+      <div class="cta"><a class="btn solid" href="download.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg>Скачать для Windows</a><a class="btn" href="cast.html">Как это работает</a></div>
+      <p class="meta">WINDOWS 10/11 · ANDROID · 0 ₽</p>
     </div>
-  </section>
+    <div class="hero-stage">
+      <div class="win"><img src="img/cast-live.jpg" width="1920" height="1160" alt="Главное окно Simply Cast: превью и эфир, переходы, полоса входов"></div>
+      <div class="rc"><img src="img/display-home.jpg" width="1920" height="1152" alt="Simply Display на телефоне"></div>
+    </div>
+  </div>
+  <div class="facts rv"><div class="fact"><b>0 ₽</b><span>Без тарифов, ключей и срока действия</span></div><div class="fact"><b>3</b><span>Приложения, которые работают вместе</span></div><div class="fact"><b>LAN</b><span>Данные не уходят из вашей сети</span></div><div class="fact"><b>H.264</b><span>Видео с шифрованием трафика</span></div></div>
 
-  <section id="solutions">
-    <div class="rv"><div class="eyebrow">Решения</div><h2>Для чего это нужно.</h2><p class="sub">Простые сценарии, в которых семейство Simply экономит время.</p></div>
-    <div class="uc rv">
-      <a href="cast.html"><b>Церкви и мероприятия</b><span>Камеры, песни и титры — в зал и в прямой эфир.</span></a>
-      <a href="cast.html"><b>Образование</b><span>Лекции с экраном, камерой и презентацией сразу в запись.</span></a>
-      <a href="cast.html"><b>Игры и стримы</b><span>Захват экрана и камеры, оверлеи, стрим в несколько мест.</span></a>
-      <a href="cast.html"><b>Подкасты и шоу</b><span>Несколько камер, звук с шинами и громкость в LUFS.</span></a>
-      <a href="display.html"><b>Работа с двумя экранами</b><span>Планшет как второй монитор для ноутбука.</span></a>
-      <a href="remote.html"><b>Режиссёр с планшетом</b><span>Управляйте эфиром из зала, а не из-за компьютера.</span></a>
+  <section id="apps">
+    <div class="sec-head rv"><div><div class="eyebrow"><b>01</b>Приложения</div></div><div><h2>Три программы, одна сеть.</h2><p class="sub">Каждая полезна сама по себе. Вместе — удобнее: пульт управляет микшером, а планшет может стать вторым монитором.</p></div></div>
+    <div class="bento rv">
+      <div class="card big"><span class="tag">Windows · 0.1.0</span><h3 style="font-size:26px">Simply Cast</h3>
+        <p>Видеомикшер: камеры, экран, видеофайлы, NDI и веб-страницы — в эфир, запись и стрим одновременно. Переходы, титры, аудиомикшер с шинами и громкостью в LUFS.</p>
+        <div class="win"><img src="img/cast-inputs.jpg" width="1920" height="1160" loading="lazy" alt="Simply Cast: меню добавления входа — камера, экран, видео, NDI, документы, поток, веб-страница"></div>
+        <a class="more" href="cast.html">Подробнее →</a></div>
+      <div class="card"><span class="tag">Windows · Android · 1.0.0</span><h3>Simply Display</h3>
+        <p>Второй экран по сети: телефон или планшет показывает рабочий стол, принимает касания, передаёт файлы, звук и буфер обмена.</p>
+        <a class="more" href="display.html">Подробнее →</a></div>
+      <div class="card"><span class="tag">Android · 0.3.3</span><h3>Simply Cast Remote</h3>
+        <p>Пульт: превью и эфир на экране, переключение входов, переходы, камера телефона как вход.</p>
+        <a class="more" href="remote.html">Подробнее →</a></div>
+    </div>
+    <div class="net rv" aria-label="Схема: компьютер, сеть, планшет и телефон">
+      <div class="node"><b><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></b>Компьютер<span>Cast</span></div>
+      <div class="ln"></div>
+      <div class="node r"><b><svg viewBox="0 0 24 24"><path d="M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 19.5h.01"/></svg></b>Ваша сеть<span>без облака</span></div>
+      <div class="ln"></div>
+      <div class="node"><b><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M11 18h2"/></svg></b>Планшет<span>Display</span></div>
+      <div class="ln"></div>
+      <div class="node"><b><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></b>Телефон<span>Remote</span></div>
     </div>
   </section>
 
   <section>
-    <div class="rv"><div class="eyebrow">Принципы</div><h2>Просто. Бесплатно. Локально.</h2><p class="sub">&nbsp;</p></div>
-    <div class="steps">
-      <div class="step rv"><em class="grad">0 ₽</em><h3>Без ключей и подписок</h3><p>Никакой активации и тарифов. Ничего не истекает.</p></div>
-      <div class="step rv"><em class="grad">LAN</em><h3>Работает в вашей сети</h3><p>Устройства находят друг друга сами, данные никуда не отправляются.</p></div>
-      <div class="step rv"><em class="grad">1</em><h3>Один стиль</h3><p>Одинаковые привычки во всех приложениях семейства.</p></div>
+    <div class="sec-head rv"><div><div class="eyebrow"><b>02</b>Сценарии</div></div><div><h2>Где это пригождается.</h2></div></div>
+    <div class="chips rv">
+      <a href="cast.html">Церкви и мероприятия<small>Cast</small></a>
+      <a href="cast.html">Образование<small>Cast</small></a>
+      <a href="cast.html">Игры и стримы<small>Cast</small></a>
+      <a href="cast.html">Подкасты и шоу<small>Cast</small></a>
+      <a href="display.html">Работа за двумя экранами<small>Display</small></a>
+      <a href="remote.html">Режиссёр с планшетом<small>Remote</small></a>
     </div>
   </section>
 
-  <div class="final rv"><h2>Начните с Simply Cast.</h2><p>Установите, добавьте камеру и нажмите «Выйти в эфир».</p><a class="btn primary" href="download.html">Перейти к загрузкам</a></div>
+  <div class="dlcard rv">
+    <div><h2>Установите и выходите в эфир.</h2><p>Добавьте камеру и нажмите «Выйти в эфир». Остальное — по ходу дела.</p></div>
+    <div class="btns">
+      <a class="btn solid dl-win" href="download.html">Simply Cast для Windows <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg></a>
+      <a class="btn" href="SimplyDisplay-Android.apk">Simply Display для Android <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg></a>
+      <a class="btn" href="SimplyDisplay-Setup-1.0.0.exe">Simply Display для Windows <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg></a>
+    </div>
+  </div>
+</div>
 </main>
-<footer><div class="wrap"><div class="cols">
-  <div><a class="logo" href="index.html" style="color:var(--text)"><i aria-hidden="true"></i>Simply</a><p style="margin:12px 0 0">Простые бесплатные приложения для эфира, экранов и управления ими.</p></div>
-  <div><h4>Приложения</h4><a href="cast.html">Simply Cast</a><a href="display.html">Simply Display</a><a href="remote.html">Simply Cast Remote</a></div>
-  <div><h4>Скачать</h4><a href="download.html">Все загрузки</a><a class="dl-all" href="#">История версий</a></div>
-  <div><h4>Поддержка</h4><a href="support.html">Вопросы</a><a class="dl-issues" href="#">Сообщить о проблеме</a><a href="privacy.html">Конфиденциальность</a></div>
-  <div class="bot"><span>© <a href="https://petrovich.party/" style="display:inline;color:var(--text)">Petrovich.party</a> · <a class="dl-repo" href="#" style="display:inline;color:var(--text)">GitHub</a></span>
-  <span>Qt и FFmpeg по LGPL. NDI® — товарный знак Vizrt NDI AB.</span></div>
-</div></div></footer>
+<footer><div class="wrap">
+  <div class="cols">
+    <div><a class="brand" href="index.html"><i aria-hidden="true"></i>Simply</a><p class="about">Бесплатные приложения для эфира, вторых экранов и управления ими. Разработка — Petrovich.party.</p></div>
+    <div><h4>Приложения</h4><a href="cast.html">Simply Cast</a><a href="display.html">Simply Display</a><a href="remote.html">Simply Cast Remote</a></div>
+    <div><h4>Загрузки</h4><a href="download.html">Все файлы</a><a class="dl-all" href="#">История версий</a></div>
+    <div><h4>Помощь</h4><a href="support.html">Вопросы и ответы</a><a class="dl-issues" href="#">Сообщить о проблеме</a><a href="privacy.html">Конфиденциальность</a></div>
+  </div>
+  <div class="bot"><span>© <a href="https://petrovich.party/">Petrovich.party</a> · <a class="dl-repo" href="#">GitHub</a></span><span>Qt и FFmpeg по LGPL. NDI® — товарный знак Vizrt NDI AB.</span></div>
+</div></footer>
 <script src="app.js"></script>
 </body>
 </html>
