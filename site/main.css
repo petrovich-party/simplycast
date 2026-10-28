@@ -1,8 +1,8 @@
 /* Simply — сайт семейства приложений. Тёмная тема, один акцент (красный тэлли), тёмные окна со скриншотами. */
 :root{
   color-scheme:dark;
-  --paper:#191b26; --paper2:#23263a; --ink:#f1f2fb; --ink2:#aab0d6; --ink3:#8b90b5;
-  --rule:#2c2f40; --line:#3a3e58; --accent:#6a78f0; --accent-text:#8f9bff; --accent-ink:#0d0f24; --live:#ff5a48; --night:#14162b; --night2:#1b1d3b; --ok:#3cc68a;
+  --paper:#120f26; --paper2:rgba(255,255,255,.10); --ink:#f4f3fb; --ink2:#c9c7e6; --ink3:#a9a7cf;
+  --rule:rgba(255,255,255,.16); --line:rgba(255,255,255,.34); --accent:#6a78f0; --accent-text:#b4bcff; --accent-ink:#0d0f24; --live:#ff5a48; --night:#0c0a1c; --night2:rgba(255,255,255,.10); --ok:#3cc68a;
   --font:"Onest","Segoe UI Variable","Segoe UI",system-ui,-apple-system,sans-serif;
   --mono:"JetBrains Mono","Cascadia Mono",Consolas,ui-monospace,monospace;
   --max:1180px; --gut:clamp(18px,4vw,40px);
@@ -295,3 +295,95 @@ footer .bot a{display:inline;padding:0;color:#aeb2bc}
 @media (max-width:960px){.bento{grid-template-columns:1fr}.home .top{position:sticky;background:color-mix(in srgb,var(--paper) 88%,transparent)}.heroband{padding-top:48px}}
 .card.c1 p{color:var(--accent-ink)}
 @media (max-width:960px){.float.f1,.float.f2,.minidev{display:none}}
+
+/* ===== стеклянный стиль (glassmorphism) ===== */
+html{background:#120f26}
+body{background:#120f26}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:
+  radial-gradient(42% 36% at 8% 8%,rgba(255,122,89,.42),transparent 70%),
+  radial-gradient(46% 40% at 92% 18%,rgba(59,108,255,.48),transparent 70%),
+  radial-gradient(42% 40% at 28% 92%,rgba(23,195,178,.36),transparent 70%),
+  radial-gradient(38% 36% at 78% 86%,rgba(196,75,255,.42),transparent 70%)}
+.glass,.card,.fact,.net,.dlcard,.chips a,.win,.phone .frame,.tbl,details,.two>div{backdrop-filter:blur(22px) saturate(140%);-webkit-backdrop-filter:blur(22px) saturate(140%)}
+.glass{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:34px}
+.top{background:transparent;border:0;top:12px;backdrop-filter:none;-webkit-backdrop-filter:none;padding:12px 0 0;position:sticky}
+.top .wrap{height:58px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:40px;backdrop-filter:blur(22px) saturate(140%);-webkit-backdrop-filter:blur(22px) saturate(140%);padding:0 8px 0 22px;max-width:calc(var(--max) - 2 * var(--gut))}
+.menu a:hover,.menu a[aria-current]{background:rgba(255,255,255,.2);color:#fff}
+.menu a.dl{background:#fff;color:var(--night)}
+.menu a.dl:hover{background:#e6e8ff;color:var(--night)}
+.btn{border-color:rgba(255,255,255,.7);color:#fff}
+.btn:hover{background:rgba(255,255,255,.18);border-color:#fff;color:#fff}
+.btn.solid{background:#fff;border-color:#fff;color:var(--night)}
+.btn.solid:hover{background:#e6e8ff;border-color:#e6e8ff}
+.win{border:1px solid rgba(255,255,255,.3);box-shadow:0 30px 60px -30px rgba(0,0,0,.7)}
+.card,.card.big{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.26);color:var(--ink)}
+.card.c1{background:rgba(106,120,240,.34);color:var(--ink)}
+.card.c2{background:rgba(23,195,178,.22);color:var(--ink)}
+.card.c1 p,.card p{color:var(--ink2)}
+.card h3,.card.c1 h3{color:#fff}
+.card .tag,.card.c1 .tag{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.3);color:#fff}
+.card a.more,.card.big a.more{background:#fff;color:var(--night)}
+.card .art{background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.22)}
+.fact,.fact+.fact{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.26);border-radius:28px}
+.facts{border:0;gap:12px}
+.net{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.26)}
+.net .node b{background:rgba(255,255,255,.2)}
+.net .node.r b{background:#fff}
+.net .node.r b svg{stroke:var(--night)}
+.chips a{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.26)}
+.chips a:hover{background:rgba(255,255,255,.26)}
+.dlcard{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);color:var(--ink)}
+.dlcard h2,.dlcard p{color:#fff}
+.dlcard .btn{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.5);color:#fff}
+.dlcard .btn.solid{background:#fff;border-color:#fff;color:var(--night)}
+.tbl{border:1px solid var(--rule);border-radius:20px;border-collapse:separate;border-spacing:0;overflow:hidden;background:rgba(255,255,255,.08)}
+.tbl th,.tbl td{padding-left:16px}
+details{background:rgba(255,255,255,.08);border:1px solid var(--rule);border-radius:20px;margin-bottom:10px;padding:0 20px}
+.faq{border:0}
+.two>div{background:rgba(255,255,255,.1);border:1px solid var(--rule);border-radius:26px;padding:24px}
+footer{background:rgba(8,6,20,.55);border-top:1px solid var(--rule);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.chip{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.26);color:#f1effa}
+.chips-row .chip{background:rgba(255,255,255,.14)}
+
+/* главная: стеклянное окно приложения */
+.glasswin{display:grid;grid-template-columns:minmax(0,1fr) 54px;gap:14px;padding:16px;margin-top:18px}
+.gw-main{display:grid;grid-template-columns:150px minmax(0,1fr);gap:14px}
+.side{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:26px;padding:10px;display:flex;flex-direction:column;gap:10px}
+.side small{font:500 12px/1 var(--mono);color:var(--ink2);padding:6px 6px 2px;letter-spacing:.05em}
+.th{position:relative;display:block;border-radius:18px;overflow:hidden;aspect-ratio:4/3;border:1px solid rgba(255,255,255,.28);text-decoration:none}
+.th img{width:100%;height:100%;object-fit:cover}
+.th span{position:absolute;left:0;right:0;bottom:0;padding:18px 10px 8px;font:600 13px/1 var(--font);color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.7))}
+.th.on{outline:2px solid #fff;outline-offset:1px}
+.ban{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(16px,3vw,36px);align-items:center;border-radius:28px;overflow:hidden;padding:clamp(22px,3.4vw,48px);min-height:clamp(340px,40vw,500px);background:radial-gradient(90% 110% at 82% 18%,#c44bff 0%,#6a2fd6 42%,#1b1250 100%);border:1px solid rgba(255,255,255,.28)}
+.ban .badge{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.22);border-radius:30px;padding:7px 14px;font:500 12px/1 var(--mono);letter-spacing:.04em}
+.ban .badge b{width:8px;height:8px;border-radius:50%;background:var(--live)}
+.ban h1{font-size:clamp(32px,4.4vw,58px);line-height:1.04;margin:18px 0 0;color:#fff;max-width:13ch}
+.ban p.lead{margin:16px 0 0;color:#efecff;font-size:clamp(15px,1.4vw,18px);max-width:40ch}
+.ban .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;align-items:center}
+.ban .art{position:relative;margin:0;border:3px solid rgba(255,255,255,.92);border-radius:26px;padding:8px;background:rgba(12,10,28,.6);box-shadow:0 30px 50px -26px rgba(0,0,0,.8)}
+.ban .art img{border-radius:18px;width:100%}
+.ban .art .lv{position:absolute;top:18px;left:18px;z-index:2;background:var(--live);color:#17100f;font:500 11px/1 var(--mono);padding:5px 8px;border-radius:6px}
+.rail{align-self:start;margin-top:56px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.26);border-radius:30px;padding:8px 0;display:flex;flex-direction:column;align-items:center;gap:10px}
+.rail a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;color:#fff;transition:background .15s}
+.rail a:hover{background:rgba(255,255,255,.36)}
+.rail a.on{background:#fff;color:var(--night)}
+.rail svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+@media (max-width:960px){
+  .glasswin{grid-template-columns:1fr;padding:12px}
+  .gw-main{grid-template-columns:1fr}
+  .side,.rail{display:none}
+  .ban{grid-template-columns:1fr;min-height:0}
+}
+@media (max-width:640px){
+  .glass,.card,.fact,.net,.dlcard,.chips a,.win,.tbl,details,.two>div,.top .wrap,footer{backdrop-filter:none;-webkit-backdrop-filter:none}
+  .glass,.card,.fact,.net,.dlcard,.top .wrap{background:rgba(40,34,84,.88)}
+  .top .wrap{padding:0 8px 0 16px}
+}
+.ban{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)}
+.ban h1{max-width:none;font-size:clamp(30px,3.9vw,52px)}
+@media (max-width:960px){.ban{grid-template-columns:1fr}}
+.ban .cta{display:flex;flex-wrap:wrap;gap:10px}
+.ban .cta .btn{white-space:nowrap;padding-inline:18px}
+.ban{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+.ban .art{width:100%;max-width:none}
+@media (max-width:960px){.ban{grid-template-columns:1fr}}
