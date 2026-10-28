@@ -387,3 +387,20 @@ footer{background:rgba(8,6,20,.55);border-top:1px solid var(--rule);backdrop-fil
 .ban{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
 .ban .art{width:100%;max-width:none}
 @media (max-width:960px){.ban{grid-template-columns:1fr}}
+
+/* внутренние страницы: стеклянный стиль */
+.hero:not(.home){position:relative;margin-top:28px;padding:clamp(36px,5vw,72px) clamp(24px,4.5vw,64px);border-radius:34px;border:1px solid rgba(255,255,255,.3);overflow:hidden;
+  background:radial-gradient(120% 140% at 78% 8%,#b24dff 0%,#6a2fd0 38%,#2b1a6b 72%,#1b1248 100%);box-shadow:0 30px 70px -34px rgba(0,0,0,.8),inset 0 1px 0 rgba(255,255,255,.35)}
+.hero:not(.home) h1{max-width:18ch;font-size:clamp(32px,4.6vw,58px);color:#fff}
+.hero:not(.home) .lead{color:#ece9ff}
+.hero:not(.home) .eyebrow,.hero:not(.home) .note,.hero:not(.home) .meta{color:#e4e0ff}
+.page-head{margin-top:28px;padding:clamp(32px,5vw,60px) clamp(24px,4.5vw,56px);border-radius:34px;border:1px solid rgba(255,255,255,.3);
+  background:radial-gradient(120% 140% at 78% 8%,#b24dff 0%,#6a2fd0 40%,#2b1a6b 75%,#1b1248 100%)}
+.page-head h1{color:#fff}.page-head .lead,.page-head .eyebrow{color:#ece9ff}
+.stage .win{padding:10px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.34);border-radius:30px}
+.stage .win img{border-radius:20px}
+.rows{border-top:0;display:grid;gap:12px}
+.row{padding:22px clamp(18px,2.4vw,30px);border:1px solid rgba(255,255,255,.2);border-radius:24px;background:rgba(255,255,255,.10)}
+.steps{gap:14px}
+.step{border:1px solid rgba(255,255,255,.2);border-radius:26px;background:rgba(255,255,255,.10);padding:24px}
+@media (max-width:640px){.hero:not(.home),.page-head{border-radius:26px}.stage .win{padding:6px;border-radius:22px}}
