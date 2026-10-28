@@ -426,3 +426,93 @@ footer{background:rgba(8,6,20,.55);border-top:1px solid var(--rule);backdrop-fil
 section[id]{scroll-margin-top:110px}
 @media (max-width:860px){.gstep,.gstep:nth-child(even){grid-template-columns:1fr}.gstep:nth-child(even) .gimg{order:0}}
 @media (max-width:640px){.gstep{border-radius:24px;-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(40,34,84,.88)}}
+
+/* ===== бумажная тема: единый стиль с новой главной (светлая бумага, чёрный, лайм, коралл) ===== */
+:root{
+  color-scheme:light;
+  --paper:#f3f0e8; --paper2:rgba(18,19,17,.06); --ink:#121311; --ink2:#4a4c44; --ink3:#6f7068;
+  --rule:#d8d3c6; --line:rgba(18,19,17,.3); --accent:#d9ff52; --accent-text:#e5421c; --accent-ink:#121311;
+  --live:#ff5c37; --night:#121311; --night2:rgba(18,19,17,.06); --ok:#3f9f5b;
+  --font:"Manrope","Segoe UI Variable","Segoe UI",system-ui,-apple-system,sans-serif;
+  --display:"Unbounded","Manrope",system-ui,sans-serif;
+  --card:#fbfaf5;
+}
+html,body{background:var(--paper)}
+body::before{display:none}
+::selection{background:var(--accent);color:var(--ink)}
+:focus-visible{outline-color:var(--ink)}
+h1,h2,h3{font-family:var(--display);font-weight:500;letter-spacing:-.045em}
+h1{font-size:clamp(30px,4.8vw,58px);line-height:1.04}
+h2{font-size:clamp(26px,3.3vw,40px)}
+h3{font-size:18px;font-weight:500;letter-spacing:-.03em}
+.glass,.card,.fact,.net,.dlcard,.chips a,.win,.phone .frame,.tbl,details,.two>div,.top .wrap,footer,.gstep{backdrop-filter:none;-webkit-backdrop-filter:none}
+
+/* шапка */
+.top{position:sticky;top:10px;padding:10px 0 0}
+.top .wrap{background:color-mix(in srgb,var(--paper) 86%,transparent);border:1px solid var(--rule);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.brand{font-family:var(--display);font-weight:500;letter-spacing:-.05em;font-size:20px}
+.brand i{position:relative;width:26px;height:26px;border-radius:8px;background:var(--ink);box-shadow:none}
+.brand i::after{content:"";position:absolute;left:5px;top:5px;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.brand i::before{content:"";position:absolute;right:5px;bottom:5px;width:11px;height:11px;border-radius:50%;border:2.5px solid var(--live)}
+.menu a{color:var(--ink2)}
+.menu a:hover,.menu a[aria-current]{background:var(--paper2);color:var(--ink)}
+.menu a.dl{background:var(--ink);color:var(--accent)}
+.menu a.dl:hover{background:#2a2c27;color:var(--accent)}
+
+/* кнопки */
+.btn{border-color:var(--ink);color:var(--ink)}
+.btn:hover{background:var(--paper2);border-color:var(--ink);color:var(--ink)}
+.btn.solid{background:var(--ink);border-color:var(--ink);color:var(--accent)}
+.btn.solid:hover{background:#2a2c27;border-color:#2a2c27;color:var(--accent)}
+.btn small{opacity:.7}
+
+/* карточки и блоки */
+.card,.card.big,.card.c1,.card.c2,.fact,.fact+.fact,.net,.tbl,details,.two>div,.row,.step,.gstep,.chip,.chips-row .chip,.chips a{background:var(--card);border:1px solid var(--rule);color:var(--ink)}
+.card.c1{background:var(--accent)}
+.card h3,.card.c1 h3,.card p,.card.c1 p{color:var(--ink)}
+.card .tag,.card.c1 .tag,.tag{background:var(--paper);border-color:var(--rule);color:var(--ink2)}
+.card a.more,.card.big a.more{background:var(--ink);color:var(--accent)}
+.card .art{background:var(--ink);border:0}
+.chips a:hover{background:var(--accent);color:var(--ink)}
+.net .node b{background:var(--paper2)}
+.net .node.r b{background:var(--ink)}
+.net .node.r b svg{stroke:var(--accent)}
+.tbl th{color:var(--ink2)}
+details summary{color:var(--ink)}
+.dlcard{background:var(--ink);border:0;color:var(--paper)}
+.dlcard h2,.dlcard p{color:var(--paper)}
+.dlcard .btn{background:transparent;border-color:rgba(243,240,232,.5);color:var(--paper)}
+.dlcard .btn:hover{background:rgba(243,240,232,.12)}
+.dlcard .btn.solid{background:var(--accent);border-color:var(--accent);color:var(--ink)}
+
+/* окна со скриншотами остаются тёмными */
+.win{background:var(--night);border:1px solid #2a2e36;box-shadow:0 30px 60px -34px rgba(18,19,17,.55)}
+.stage .win{padding:0;background:var(--night);border:1px solid #2a2e36;border-radius:20px}
+.stage .win img{border-radius:19px}
+.gimg{background:var(--night);border:0}
+.dev,.bigwin,.ban .art{border-color:#353830;background:#000}
+
+/* плашки заголовков страниц: лайм */
+.hero:not(.home),.page-head,.ban{background:var(--accent);border:0;box-shadow:none;color:var(--ink)}
+.hero:not(.home) h1,.page-head h1,.ban h1{color:var(--ink)}
+.hero:not(.home) .lead,.page-head .lead,.ban p.lead{color:var(--ink2)}
+.hero:not(.home) .eyebrow,.hero:not(.home) .note,.hero:not(.home) .meta,.page-head .eyebrow{color:var(--ink)}
+.hero:not(.home) .eyebrow b,.page-head .eyebrow b{color:var(--live)}
+.ban .badge{background:rgba(18,19,17,.1)}
+
+/* инструкции */
+.gnav a{background:var(--card);border:1px solid var(--rule);color:var(--ink)}
+.gnav a:hover{background:var(--ink);color:var(--accent);border-color:var(--ink)}
+.gn{background:var(--ink);color:var(--accent)}
+.gtxt p{color:var(--ink2)}
+
+/* подвал */
+footer{background:var(--ink);color:#c9ccd3;border:0}
+footer .bot{border-top-color:#2a2c27}
+@media (max-width:640px){
+  .card,.fact,.net,.dlcard,.top .wrap,.gstep{background:var(--card)}
+  .dlcard{background:var(--ink)}
+  .top .wrap{background:color-mix(in srgb,var(--paper) 92%,transparent)}
+}
+h1,h2,h3{overflow-wrap:break-word}
+h1,.hero:not(.home) h1,.page-head h1,.ban h1{font-size:clamp(25px,4.6vw,56px)}
