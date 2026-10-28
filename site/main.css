@@ -404,3 +404,25 @@ footer{background:rgba(8,6,20,.55);border-top:1px solid var(--rule);backdrop-fil
 .steps{gap:14px}
 .step{border:1px solid rgba(255,255,255,.2);border-radius:26px;background:rgba(255,255,255,.10);padding:24px}
 @media (max-width:640px){.hero:not(.home),.page-head{border-radius:26px}.stage .win{padding:6px;border-radius:22px}}
+
+/* инструкции */
+.gnav{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.gnav a{padding:11px 18px;border-radius:30px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.34);color:#fff;text-decoration:none;font-weight:600;font-size:15px}
+.gnav a:hover{background:#fff;color:#120f26}
+.guide{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+.gstep{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(18px,3vw,40px);align-items:center;padding:clamp(14px,2vw,22px);border:1px solid rgba(255,255,255,.22);border-radius:30px;background:rgba(255,255,255,.10);-webkit-backdrop-filter:blur(22px) saturate(140%);backdrop-filter:blur(22px) saturate(140%)}
+.gstep:nth-child(even){grid-template-columns:minmax(0,1fr) minmax(0,1.15fr)}
+.gstep:nth-child(even) .gimg{order:2}
+.gimg{margin:0;padding:8px;border-radius:22px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3)}
+.gimg img{width:100%;border-radius:15px;display:block}
+.gimg.phoneimg{max-width:300px;margin-inline:auto}
+.gtxt{padding:6px clamp(4px,1vw,14px)}
+.gtxt.gwide{grid-column:1/-1}
+.gtxt h3{margin:12px 0 10px}
+.gtxt p{color:var(--ink2);font-size:16px;margin-top:10px}
+.gtxt b{color:var(--ink)}
+.gn{display:inline-flex;width:38px;height:38px;border-radius:50%;background:#fff;color:#120f26;align-items:center;justify-content:center;font:700 16px/1 var(--mono)}
+.gmore{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
+section[id]{scroll-margin-top:110px}
+@media (max-width:860px){.gstep,.gstep:nth-child(even){grid-template-columns:1fr}.gstep:nth-child(even) .gimg{order:0}}
+@media (max-width:640px){.gstep{border-radius:24px;-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(40,34,84,.88)}}
